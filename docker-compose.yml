@@ -9,16 +9,18 @@ services:
       - "8080:8080"
     volumes:
       - ./realm-export.json:/opt/keycloak/data/import/realm-export.json
+    networks:
+      - app-network
 
   angular-app:
-    build:
-      context: .
-      dockerfile: Dockerfile
+    image: local/frontend
     ports:
       - "4200:4200"
-    volumes:
-      - .:/app
-    command: npx ng serve --host 0.0.0.0
+    networks:
+      - app-network
 
+networks:
+  app-network:
+    driver: bridge
 
 
