@@ -1,0 +1,20 @@
+<div class="login-container">
+  <div  *ngIf="!isChildActive()">
+    <h2>Address Details</h2>
+    <form (ngSubmit)="validateAddress()">
+      <input [(ngModel)]="onboarding.userData.firstName" name="firstName" placeholder="First Name" required>
+      <input [(ngModel)]="onboarding.userData.lastName" name="lastName" placeholder="Last Name" required>
+      <input [(ngModel)]="onboarding.userData.email" name="email" placeholder="Email" required>
+      <input [(ngModel)]="onboarding.userData.company" name="company" placeholder="Company" required>
+      <input [(ngModel)]="onboarding.userData.jobTitleName" name="jobTitleName" placeholder="Job Title Name" required>
+      <input [(ngModel)]="onboarding.userData.dateOfBirth" name="dateOfBirth" placeholder="Date of Birth" required>
+      <input [(ngModel)]="onboarding.userData.address.streetAddress" name="streetAddress" placeholder="Street Address" required>
+      <input [(ngModel)]="onboarding.userData.address.city" name="city" placeholder="City" required>
+      <input [(ngModel)]="onboarding.userData.address.state" name="state" placeholder="State" required>
+      <input [(ngModel)]="onboarding.userData.address.zipCode" name="zipCode" placeholder="ZipCode" required>
+      <input [(ngModel)]="onboarding.userData.address.country" name="Country" placeholder="Country" required>
+      <button type="submit">Submit Details</button>
+      <p *ngIf="error" class="error">{{ error }}</p>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,20 @@
+.header {
+  background-color: #333;
+  padding: 1rem;
+}
+
+.header nav {
+  display: flex;
+  gap: 1rem;
+}
+
+.header a {
+  color: white;
+  text-decoration: none;
+  padding: 0.5rem;
+}
+
+.header a.active {
+  background-color: #1976d2;
+  border-radius: 4px;
+}

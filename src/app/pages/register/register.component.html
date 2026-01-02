@@ -1,0 +1,16 @@
+<div class="login-container">
+  <div  *ngIf="!isChildActive()">
+  <h2>Validate KYC</h2>
+  <form (ngSubmit)="validateKYC()">
+    <select [(ngModel)]="product" name="product">
+      <option *ngFor="let product of products" [value]="product">
+        {{ product }}
+      </option>
+    </select>
+    <input [(ngModel)]="kycNumber" name="kycNumber" autocomplete="off" placeholder="KYC Number" required>
+    <button type="submit">Validate KYC</button>
+    <p *ngIf="error" class="error">{{ error }}</p>
+  </form>
+  </div>
+  <router-outlet></router-outlet>
+</div>

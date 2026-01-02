@@ -1,0 +1,7 @@
+.DS_STORE
+.DS_Store
+/dist/
+node_modules/
+.angular/
+package-lock.json
+shi-bank.iml
