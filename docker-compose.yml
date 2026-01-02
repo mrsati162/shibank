@@ -10,3 +10,16 @@ services:
     volumes:
       - ./realm-export.json:/opt/keycloak/data/import/realm-export.json
 
+  angular-app:
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "4200:4200"
+    volumes:
+      - .:/app
+      - /app/node_modules
+    command: npx ng serve --host 0.0.0.0
+
+
+
